@@ -25,10 +25,10 @@ let playRound = (playerSelection, computerSelection) => {
   else {
     winner = getWinner(playerSelection, computerSelection)
     if (winner === 'player') {
-      console.log(`${playerSelection} beats ${computerSelection}`)
+      console.log(`You win! ${playerSelection} beats ${computerSelection}`)
     }
     else {
-      console.log(`${computerSelection} beats ${playerSelection}`)
+      console.log(`You lose. ${computerSelection} beats ${playerSelection}`)
     }
     console.log(`${winner} wins!`)
     // break
