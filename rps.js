@@ -5,17 +5,17 @@ choices = ['rock', 'paper', 'scissors']
 
 // update to camel case
 let computerPlay = (choices) => {
-  random_index = calc_random_index(choices)
+  random_index = calcRandomIndex(choices)
   return choices[random_index]
 }
 
 // update to camel case
-let calc_random_index = (choices) => {
+let calcRandomIndex = (choices) => {
   return Math.floor(choices.length * Math.random())
 }
 
 // update to camel case
-let get_player_selection = () =>  prompt("Enter your choice: 'rock', 'paper', or 'scissors':");
+let getPlayerSelection = () =>  prompt("Enter your choice: 'rock', 'paper', or 'scissors':");
 
 let playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {       // parentheses issue resolved
@@ -47,6 +47,6 @@ let getWinner = (playerSelection, computerSelection) => {
   }
 }
 
-playerChoice = get_player_selection()
+playerChoice = getPlayerSelection()
 computerSelection = computerPlay(choices)
 playRound(playerChoice, computerSelection)
