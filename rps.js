@@ -59,4 +59,12 @@ let announceRoundWinner = (playerSelection, computerSelection) => {
     }
 }
 
-playRound()
+let game = () => {
+  let round = 1;
+  while (round < 6) {
+    playRound();
+    round += 1;
+  }
+}
+
+game();
