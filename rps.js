@@ -17,22 +17,10 @@ let calcRandomIndex = (choices) => {
 // update to camel case
 let getPlayerSelection = () =>  prompt("Enter your choice: 'rock', 'paper', or 'scissors':").toLowerCase();
 
-let playRound = (playerSelection, computerSelection) => {
-  if (playerSelection === computerSelection) {       // parentheses issue resolved
-    console.log(`${playerSelection} matches ${playerSelection}`)
-    console.log("It's a draw!")
-  }
-  else {
-    winner = getWinner(playerSelection, computerSelection)
-    if (winner === 'player') {
-      console.log(`You win! ${playerSelection} beats ${computerSelection}`)
-    }
-    else {
-      console.log(`You lose. ${computerSelection} beats ${playerSelection}`)
-    }
-    console.log(`${winner} wins!`)
-    // break
-  }
+let playRound = () => {
+  playerChoice = getPlayerSelection()
+  computerSelection = computerPlay(choices)
+  announceRoundResult(playerChoice, computerSelection)
 }
 
 let getWinner = (playerSelection, computerSelection) => {
@@ -47,6 +35,28 @@ let getWinner = (playerSelection, computerSelection) => {
   }
 }
 
-playerChoice = getPlayerSelection()
-computerSelection = computerPlay(choices)
-playRound(playerChoice, computerSelection)
+let announceRoundResult = (playerSelection, computerSelection) => {
+  if (playerSelection === computerSelection) {       // parentheses issue resolved
+    announceDraw(playerSelection, computerSelection)
+  }
+  else {
+    announceRoundWinner(playerSelection, computerSelection);
+  }
+}
+
+let announceDraw = (playerSelection, computerSelection) => {
+  console.log(`${playerSelection} matches ${playerSelection}`)
+  console.log("It's a draw!")
+}
+
+let announceRoundWinner = (playerSelection, computerSelection) => {
+  winner = getWinner(playerSelection, computerSelection)
+    if (winner === 'player') {
+      console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+    }
+    else {
+      console.log(`You lose. ${computerSelection} beats ${playerSelection}`)
+    }
+}
+
+playRound()
