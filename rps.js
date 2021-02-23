@@ -15,7 +15,7 @@ let calcRandomIndex = (choices) => {
 }
 
 // update to camel case
-let getPlayerSelection = () =>  prompt("Enter your choice: 'rock', 'paper', or 'scissors':").toLowerCase;
+let getPlayerSelection = () =>  prompt("Enter your choice: 'rock', 'paper', or 'scissors':").toLowerCase();
 
 let playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {       // parentheses issue resolved
