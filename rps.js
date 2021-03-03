@@ -61,6 +61,10 @@ let updateScore = (winner, computerWins, playerWins) => {
   }
 }
 
+let getGameWinner = (playerWins, computerWins) => {
+  return playerWins > computerWins ? 'You win' : 'The computer wins' // need return
+}
+
 let game = () => {
   let round = 1;  // move these three variables out into global scope?
   let playerWins = 0;
@@ -75,8 +79,10 @@ let game = () => {
     }
     round += 1;
   }
-  console.log(`player wins: ${playerWins}`)
-  console.log(`computer wins: ${computerWins}`)
+  // console.log(`player wins: ${playerWins}`)
+  // console.log(`computer wins: ${computerWins}`)
+  gameWinner = getGameWinner(playerWins, computerWins)
+  console.log(`${playerWins}:${computerWins} - ${gameWinner} this best of five game!`)
 }
 
 game();
