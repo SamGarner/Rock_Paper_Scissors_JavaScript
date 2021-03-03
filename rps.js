@@ -22,7 +22,6 @@ let playRound = (computerWins, playerWins) => {
   computerSelection = computerPlay(choices)
   winner = getWinner(playerChoice, computerSelection)
   announceRoundResult(playerChoice, computerSelection, winner)
-  // updateScore(winner, computerWins, playerWins)
   return winner
 }
 
@@ -42,27 +41,15 @@ let getWinner = (playerSelection, computerSelection) => {
 }
 
 let announceRoundResult = (playerSelection, computerSelection, winner) => {
-  if (playerSelection === computerSelection) {       // parentheses issue resolved  //refacotr
-    announceDraw(playerSelection, computerSelection)
+  if (winner === 'draw') {
+    console.log(`${playerSelection} matches ${playerSelection}. It's a draw.`)
+  }
+  else if (winner === 'player') {
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`)
   }
   else {
-    announceRoundWinner(playerSelection, computerSelection, winner);
+    console.log(`You lose. ${computerSelection} beats ${playerSelection}`)
   }
-}
-
-let announceDraw = (playerSelection, computerSelection) => {
-  console.log(`${playerSelection} matches ${playerSelection}`)
-  console.log("It's a draw!")
-}
-
-let announceRoundWinner = (playerSelection, computerSelection, winner) => {
-  // winner = getWinner(playerSelection, computerSelection)
-    if (winner === 'player') {
-      console.log(`You win! ${playerSelection} beats ${computerSelection}`)
-    }
-    else {
-      console.log(`You lose. ${computerSelection} beats ${playerSelection}`)
-    }
 }
 
 let updateScore = (winner, computerWins, playerWins) => {
