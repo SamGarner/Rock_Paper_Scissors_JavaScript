@@ -69,6 +69,7 @@ let game = () => {
   let round = 1;  // move these three variables out into global scope?
   let playerWins = 0;
   let computerWins = 0;
+  console.log('The best-of-five game beings now...')
   while (round < 6) {
     winner = playRound();
     if (winner === 'draw') {
@@ -82,7 +83,7 @@ let game = () => {
   // console.log(`player wins: ${playerWins}`)
   // console.log(`computer wins: ${computerWins}`)
   gameWinner = getGameWinner(playerWins, computerWins)
-  console.log(`${playerWins}:${computerWins} - ${gameWinner} this best of five game!`)
+  console.log(`${playerWins}:${computerWins} - ${gameWinner} this best-of-five game!`)
 }
 
 game();
