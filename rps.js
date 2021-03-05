@@ -17,7 +17,7 @@ let calcRandomIndex = (choices) => {
 // update to camel case
 let getPlayerSelection = () =>  prompt("Enter your choice: 'rock', 'paper', or 'scissors':").toLowerCase();
 
-let playRound = (computerWins, playerWins) => {
+let playRound = () => {
   playerChoice = getPlayerSelection()
   computerSelection = computerPlay(choices)
   winner = getWinner(playerChoice, computerSelection)
@@ -52,14 +52,14 @@ let announceRoundResult = (playerSelection, computerSelection, winner) => {
   }
 }
 
-let updateScore = (winner, computerWins, playerWins) => {
-  if (winner === 'player') {
-    playerWins += 1
-  }
-  else if (winner === 'computer') {
-    computerWins += 1
-  }
-}
+// let updateScore = (winner, computerWins, playerWins) => {
+//   if (winner === 'player') {
+//     playerWins += 1
+//   }
+//   else if (winner === 'computer') {
+//     computerWins += 1
+//   }
+// }
 
 let getGameWinner = (playerWins, computerWins) => {
   return playerWins > computerWins ? 'You win' : 'The computer wins' // need return
