@@ -17,9 +17,9 @@ let calcRandomIndex = (choices) => {
 // update to camel case
 let getPlayerSelection = (choices) =>  {
   do {
-    playerInput = getPlayerInput(); 
+    playerInput = getPlayerInput();
+    if (!choices.includes(playerInput)) console.log(`Invalid input: ${playerInput}`);
   }
-  // while !isValidInput(choices, playerSelection)
   while (!choices.includes(playerInput));
   return playerInput;
 }
