@@ -15,10 +15,21 @@ let calcRandomIndex = (choices) => {
 }
 
 // update to camel case
-let getPlayerSelection = () =>  prompt("Enter your choice: 'rock', 'paper', or 'scissors':").toLowerCase();
+let getPlayerSelection = (choices) =>  {
+  do {
+    playerInput = getPlayerInput(); 
+  }
+  // while !isValidInput(choices, playerSelection)
+  while (!choices.includes(playerInput));
+  return playerInput;
+}
+
+let getPlayerInput = () => prompt("Enter your choice: 'rock', 'paper', or 'scissors':").toLowerCase();
+
+// let isValidInput = (choices, playerInput) => choices.includes(playerInput);
 
 let playRound = () => {
-  playerChoice = getPlayerSelection()
+  playerChoice = getPlayerSelection(choices)
   computerSelection = computerPlay(choices)
   winner = getWinner(playerChoice, computerSelection)
   announceRoundResult(playerChoice, computerSelection, winner)
